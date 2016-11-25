@@ -40,10 +40,12 @@ if __name__=="__main__":
 
     stds = np.array([])
     t_stds = np.array([])
-    for i in range(7):
+    count = int(max(Ts) / 60.)
 
-        start = i * 1000
-        stop = start + 1000
+    for i in range(60):
+
+        start = i * count
+        stop = start + count
         
         stds = np.append(stds, get_std(start, stop, Ts, Rs))
         t_stds = np.append(t_stds, (start + stop)/2 )
