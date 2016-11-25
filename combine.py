@@ -3,6 +3,8 @@
 
 # Author: Akke Viitanen
 
+# Usage: ./combine.py olgaTRR.csv olgaRR.csv 
+
 # Imports
 from sys import argv
 import numpy as np
