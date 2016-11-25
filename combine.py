@@ -12,23 +12,18 @@ import matplotlib.pyplot as plt
 
 # Main
 if __name__=="__main__":
-    data1 = np.loadtxt(argv[1])
-    data2 = np.loadtxt(argv[2])
+
+    T_data = np.loadtxt(argv[1])
+    RRs = np.loadtxt(argv[2])
 
     Ts = []
-    RRs = []
+    Rs = []
 
-    for i in range(len(data2)): 
-        if i%1000 != 0:
-            continue
+    for i in range(len(RRs)): 
 
-        print(i)
+        Ts.append((T_data[i] + T_data[i+1]) / 2)
+        Rs.append(RRs[i])
 
-        T = (data1[i] + data1[i+1]) / 2
-        RR = data2[i]
 
-        Ts.append(T)
-        RRs.append(RRs)
-
-    plt.plot(Ts, RRs)
+    plt.plot(Ts, Rs)
     plt.show()
